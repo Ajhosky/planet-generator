@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from app.models.planet_visuals import PlanetVisuals
 
 class PlanetParameters(BaseModel):
     density_g_cm3: float
@@ -24,3 +24,4 @@ class PlanetOutput(BaseModel):
     parameters: PlanetParameters
     classification: str
     warnings: list[str]
+    visuals: PlanetVisuals | None = None
